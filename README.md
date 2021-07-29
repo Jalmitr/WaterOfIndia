@@ -1,5 +1,5 @@
 
-![logo](https://github.com/Jalmitr/WaterOfIndia/blob/main/logo1.png)
+![logo](https://github.com/Jalmitr/WaterOfIndia/blob/main/logosmall.png)
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # WaterOfIndia
