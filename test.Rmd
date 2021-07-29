@@ -1,0 +1,95 @@
+---
+title: "test"
+author: "Scary Scarecrow"
+date: "7/27/2021"
+output:
+  html_document:
+    self_contained: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(sp)
+library(raster)
+library(osmdata)
+library(leaflet)
+library(rosm)
+library(prettymapr)
+library(rgdal)
+library(hexSticker)
+```
+
+## Ralegaon
+
+```{r echo=FALSE}
+dat<-sf::st_read('mh_yav_ral.osm', layer = 'multipolygons')
+  
+  dat_sp <- as(dat, 'Spatial')
+  
+  leaflet::leaflet(dat_sp) %>% 
+    leaflet::addTiles() %>% 
+    leaflet::addPolygons()
+```
+
+
+## Yavatmal
+
+```{r echo=FALSE}
+  
+  dat<-sf::st_read('mh_yav.osm', layer = 'multipolygons')
+  
+  dat_sp <- as(dat, 'Spatial')
+  
+  leaflet::leaflet(dat_sp) %>% 
+    leaflet::addTiles() %>% 
+    leaflet::addPolygons()
+```
+
+
+```{r echo=FALSE}
+
+  # opq(bbox = 'ralegaon, yavatmal, maharashtra') %>%
+  #   #add_osm_feature(key = 'natural', value = 'water') %>%
+  #   osmdata_xml(filename = 'mh_yav_raw.osm')
+  
+  dat<-sf::st_read('mh_yav_raw.osm', layer = 'multipolygons')
+  
+  dat_sp <- as(dat, 'Spatial')
+  
+    leaflet::leaflet(dat_sp) %>% 
+    leaflet::addTiles() %>% 
+    leaflet::addPolygons()
+  # makebbox(47.2, -59.7, 43.3, -66.4)
+  # rosm::osm.image()
+  # 
+  # bbox()
+  # ns <- makebbox(20.5679, 78.9615, 20.0875, 78.2391)
+  # osm.raster(ns, projection=CRS("+init=epsg:4326"),filename="mh_yav_ralegaon.tif", overwrite=T)
+```
+
+
+```{r}
+geojson_file <- "MH_yav.json"
+writeOGR(dat_sp, geojson_file,layer = "geojson", driver = "GeoJSON")
+
+
+```
+
+
+
+# Logo
+
+```{r}
+library(magick)
+
+imgurl <- png::readPNG("drop.png")
+g<-grid::rasterGrob(imgurl, interpolate=TRUE)
+sticker(g, package="WaterOfIndia", p_size=10,  s_width=4, s_height= 1.5, h_fill = "transparent", h_color = "white",
+         p_color = "white", url = "www.willaddlater.com", u_color = "white",
+         filename="logo1.png", spotlight = F, l_height = 1, l_x=0.275, l_y=0.75, s_x=1, s_y=1.3, p_x=1,p_y=0.5, l_alpha = 0.6)
+```
+
+
+
+
+
