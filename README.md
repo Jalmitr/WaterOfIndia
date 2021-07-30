@@ -1,5 +1,5 @@
 
-![logo](https://github.com/Jalmitr/WaterOfIndia/blob/main/logosmall.png)
+![logo](./www/logosmall.png)
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # WaterOfIndia
@@ -20,3 +20,10 @@ Fellow](https://www.ashoka.org/en-us/ashoka-fellows) [Neelkanth
 Mishra](https://www.ashoka.org/en/fellow/neelkanth-mishra).
 
 # Contributors
+
+1.  [Ashutosh Vyas](https://www.linkedin.com/in/ashutosh-vyas)
+2.  [Lakshmi Shamarao
+    Araga](https://www.linkedin.com/in/lakshmishamarao)
+3.  [Vijay V
+    Venkitesh](https://www.linkedin.com/in/vijay-v-venkitesh-673177204/)
+4.  [Asitav Sen](https://asitavsen.com)

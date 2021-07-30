@@ -22,7 +22,7 @@ library(hexSticker)
 ## Ralegaon
 
 ```{r echo=FALSE}
-dat<-sf::st_read('mh_yav_ral.osm', layer = 'multipolygons')
+dat<-sf::st_read('./data/mh_yav_ral.osm', layer = 'multipolygons')
   
   dat_sp <- as(dat, 'Spatial')
   
@@ -36,7 +36,7 @@ dat<-sf::st_read('mh_yav_ral.osm', layer = 'multipolygons')
 
 ```{r echo=FALSE}
   
-  dat<-sf::st_read('mh_yav.osm', layer = 'multipolygons')
+  dat<-sf::st_read('./data/mh_yav.osm', layer = 'multipolygons')
   
   dat_sp <- as(dat, 'Spatial')
   
@@ -50,9 +50,9 @@ dat<-sf::st_read('mh_yav_ral.osm', layer = 'multipolygons')
 
   # opq(bbox = 'ralegaon, yavatmal, maharashtra') %>%
   #   #add_osm_feature(key = 'natural', value = 'water') %>%
-  #   osmdata_xml(filename = 'mh_yav_raw.osm')
+  #   osmdata_xml(filename = './data/mh_yav_raw.osm')
   
-  dat<-sf::st_read('mh_yav_raw.osm', layer = 'multipolygons')
+  dat<-sf::st_read('./data/mh_yav_raw.osm', layer = 'multipolygons')
   
   dat_sp <- as(dat, 'Spatial')
   

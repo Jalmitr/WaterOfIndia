@@ -2,10 +2,28 @@ Package: WaterOfIndia
 Version: 0.0.0.9000
 Title: Water of India
 Description: A project to list all water bodies in India, with some properties of those water bodies. This is a part of a much larger initiative by Jaljeevika.
-Authors@R: person("Asitav", "Sen", email = "7u90fioq2@relay.firefox.com",
+Authors@R: c(
+person("Asitav", "Sen", email = "7u90fioq2@relay.firefox.com",
                           role = c("aut", "cre"),
                           linkedIn= "http://linkedin.com/in/asitav-sen/",
                           website="https://asitavsen.com"
+                          ),
+person("Ashutosh", "Vyas", email = "vyasaashutosh@gmail.com",
+                          role = c("aut", "cre"),
+                          linkedIn= "https://www.linkedin.com/in/ashutosh-vyas",
+                          website=" "
+                          ),
+person("Lakshmi", "Shamarao Araga", email = "encyclopediabbm@gmail.com",
+                          role = c("aut", "cre"),
+                          linkedIn= "https://www.linkedin.com/in/lakshmishamarao",
+                          website=" "
+                          ),
+person("Vijay", "V Venkitesh", email = "vvenkiteshvijay@gmail.com",
+                          role = c("aut", "cre"),
+                          linkedIn= "https://www.linkedin.com/in/vijay-v-venkitesh-673177204/",
+                          website=" "
+                          )
+                          
                           )
 License: Mozilla + file LICENSE
 Encoding: UTF-8

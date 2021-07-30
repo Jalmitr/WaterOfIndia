@@ -160,12 +160,10 @@ q<-opq(bbox = 'ralegaon, yavatmal, maharashtra') %>%
   dat_sp <- as(dat, 'Spatial')
   
   
-  rgdal::writeGDAL(dat_sp,"test",driver="MapInfo File")
   leaflet::leaflet(dat_sp) %>% 
     leaflet::addTiles() %>% 
     leaflet::addPolygons()
   
-  slackr::slackr_upload()
    
 ```
 
