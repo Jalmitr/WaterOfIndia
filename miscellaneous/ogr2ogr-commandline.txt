@@ -1,0 +1,4 @@
+ogr2ogr - f GPKG filename1.gpkg filename2.osm
+
+ogr2ogr - f "ESRI Shapefile" filename1.shp filename2.osm
+
