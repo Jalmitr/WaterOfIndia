@@ -1,0 +1,90 @@
+/* Main query used to fetch data */
+
+[out:json][timeout:120];
+area[name="Yavatmal"]->.saveresults;
+(
+  node(area.saveresults)[~"^(basin|landuse|water|natural|waterway|wetland|water_source)$"~"^(infiltration|detention|retention|evaporation|basin|reservoir|oxbow|ditch|lock|fish_pass|lake|pond|basin|lagoon|stream_pool|reflecting_pool|moat|wastewater|water|wetland|bay|strait|cape|beach|coastline|reef|spring|hot_spring|geyser|blowhole|tidal_channel|drain|ditch|pressurised|fairway|dam|weir|waterfall|lock_gate|soakhole|turning_point|water_point|fuel|rapids|drystream|marsh|reedbed|wet_meadow|bog|fen|swamp|tidalflat|saltmarsh|mangrove|seasonal|main|irrigated)$"];
+  way(area.saveresults)[~"^(basin|landuse|water|natural|waterway|wetland|water_source)$"~"^(infiltration|detention|retention|evaporation|basin|reservoir|oxbow|ditch|lock|fish_pass|lake|pond|basin|lagoon|stream_pool|reflecting_pool|moat|wastewater|water|wetland|bay|strait|cape|beach|coastline|reef|spring|hot_spring|geyser|blowhole|tidal_channel|drain|ditch|pressurised|fairway|dam|weir|waterfall|lock_gate|soakhole|turning_point|water_point|fuel|rapids|drystream|marsh|reedbed|wet_meadow|bog|fen|swamp|tidalflat|saltmarsh|mangrove|seasonal|main|irrigated)$"];
+  relation(area.saveresults)[~"^(basin|landuse|water|natural|waterway|wetland|water_source)$"~"^(infiltration|detention|retention|evaporation|basin|reservoir|oxbow|ditch|lock|fish_pass|lake|pond|basin|lagoon|stream_pool|reflecting_pool|moat|wastewater|water|wetland|bay|strait|cape|beach|coastline|reef|spring|hot_spring|geyser|blowhole|tidal_channel|drain|ditch|pressurised|fairway|dam|weir|waterfall|lock_gate|soakhole|turning_point|water_point|fuel|rapids|drystream|marsh|reedbed|wet_meadow|bog|fen|swamp|tidalflat|saltmarsh|mangrove|seasonal|main|irrigated)$"];
+  nr(area.saveresults)[~"^(basin|landuse|water|natural|waterway|wetland|water_source)$"~"^(infiltration|detention|retention|evaporation|basin|reservoir|oxbow|ditch|lock|fish_pass|lake|pond|basin|lagoon|stream_pool|reflecting_pool|moat|wastewater|water|wetland|bay|strait|cape|beach|coastline|reef|spring|hot_spring|geyser|blowhole|tidal_channel|drain|ditch|pressurised|fairway|dam|weir|waterfall|lock_gate|soakhole|turning_point|water_point|fuel|rapids|drystream|marsh|reedbed|wet_meadow|bog|fen|swamp|tidalflat|saltmarsh|mangrove|seasonal|main|irrigated)$"];
+  nw(area.saveresults)[~"^(basin|landuse|water|natural|waterway|wetland|water_source)$"~"^(infiltration|detention|retention|evaporation|basin|reservoir|oxbow|ditch|lock|fish_pass|lake|pond|basin|lagoon|stream_pool|reflecting_pool|moat|wastewater|water|wetland|bay|strait|cape|beach|coastline|reef|spring|hot_spring|geyser|blowhole|tidal_channel|drain|ditch|pressurised|fairway|dam|weir|waterfall|lock_gate|soakhole|turning_point|water_point|fuel|rapids|drystream|marsh|reedbed|wet_meadow|bog|fen|swamp|tidalflat|saltmarsh|mangrove|seasonal|main|irrigated)$"];
+  nwr(area.saveresults)[~"^(basin|landuse|water|natural|waterway|wetland|water_source)$"~"^(infiltration|detention|retention|evaporation|basin|reservoir|oxbow|ditch|lock|fish_pass|lake|pond|basin|lagoon|stream_pool|reflecting_pool|moat|wastewater|water|wetland|bay|strait|cape|beach|coastline|reef|spring|hot_spring|geyser|blowhole|tidal_channel|drain|ditch|pressurised|fairway|dam|weir|waterfall|lock_gate|soakhole|turning_point|water_point|fuel|rapids|drystream|marsh|reedbed|wet_meadow|bog|fen|swamp|tidalflat|saltmarsh|mangrove|seasonal|main|irrigated)$"];
+
+);
+out geom;
+out meta;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Tags used and not used for water body data extraction. Reference: https://wiki.openstreetmap.org/wiki/Map_features
+
+=============
+Included tags
+=============
+basin = infiltration, detention, retention, evaporation
+landuse = basin, reservoir
+water = reservoir, river, oxbow, ditch, lock, fish_pass, lake, pond, basin, lagoon, stream_pool, reflecting_pool, moat, wastewater
+natural = water, wetland, bay, strait, cape, beach, coastline, reef, spring, hot_spring, geyser, blowhole
+waterway = riverbank, stream, tidal_channel, drain, ditch, pressurised, fairway, dam, weir, waterfall, lock_gate, soakhole, turning_point, water_point, fuel, rapids, drystream
+wetland = marsh, reedbed, wet_meadow, bog, fen, swamp, tidalflat, saltmarsh, mangrove
+water_source = seasonal, main, irrigated
+
+=================
+Not included tags
+=================
+leisure = natural_reserve, swimming_area, swimming_pool, water_park
+man_made = reservoir_covered, tailings_pond, wastewater_plant, watermill, water_tower, water_well, water_tap, water_works
+waterway = river, canal
+
+===============================
+Query format as "OR" operations
+===============================
+[~"^(basin|landuse|water|natural|waterway|wetland|water_source)$"~"^(infiltration|detention|retention|evaporation|basin|reservoir|oxbow|ditch|lock|fish_pass|lake|pond|basin|lagoon|stream_pool|reflecting_pool|moat|wastewater|water|wetland|bay|strait|cape|beach|coastline|reef|spring|hot_spring|geyser|blowhole|tidal_channel|drain|ditch|pressurised|fairway|dam|weir|waterfall|lock_gate|soakhole|turning_point|water_point|fuel|rapids|drystream|marsh|reedbed|wet_meadow|bog|fen|swamp|tidalflat|saltmarsh|mangrove|seasonal|main|irrigated)$"];
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+=========================
+Initialization statements
+=========================
+[out:json];
+[out:xml];
+[timeout:25];
+area[name="Yavatmal"];
+area[name="Yavatmal"].->saveresults;
+[date:"2013-08-14T15:00:00Z"];
+[diff:date1,date2]
+
+==========================
+Data extraction statements
+==========================
+(
+  node(area.saveresults)["natural"="water"];
+  way(area.saveresults)["natural"="water"];
+  relation(area.saveresults)["natural"="water"];
+  nr(area.saveresults)["natural"="water"];
+  nw(area.saveresults)["natural"="water"];
+  wr(area.saveresults)["natural"="water"];
+  nwr(area.saveresults)["natural"="water"];
+);
+>;
+
+=================
+Output statements
+=================
+out geom;
+out skel qt;
+out body;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/* An example query. This has been generated by the overpass-turbo wizard. The original search was: “water” */
+
+[out:json][timeout:25];
+// gather results
+(
+  // query part for: “water”
+  way["natural"="water"]({{bbox}});
+  relation["natural"="water"]({{bbox}});
+);
+// print results
+out body;
+>;
+out skel qt;
