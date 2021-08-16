@@ -22,6 +22,11 @@ person("Vijay", "V Venkitesh", email = "vvenkiteshvijay@gmail.com",
                           role = c("aut", "cre"),
                           linkedIn= "https://www.linkedin.com/in/vijay-v-venkitesh-673177204/",
                           website=" "
+                          ),
+person("Sakshi", "Rikhe", email = "sakshirikhe0192@gmail.com",
+                          role = c("aut", "cre"),
+                          linkedIn= "https://www.linkedin.com/in/sakshi-rikhe-サクシ-リケ-3b5049a2",
+                          website=" "
                           )
                           
                           )

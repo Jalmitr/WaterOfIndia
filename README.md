@@ -26,4 +26,6 @@ Mishra](https://www.ashoka.org/en/fellow/neelkanth-mishra).
     Araga](https://www.linkedin.com/in/lakshmishamarao)
 3.  [Vijay V
     Venkitesh](https://www.linkedin.com/in/vijay-v-venkitesh-673177204/)
-4.  [Asitav Sen](https://asitavsen.com)
+4.  [Sakshi
+    Rikhe](https://www.linkedin.com/in/sakshi-rikhe-サクシ-リケ-3b5049a2)
+5.  [Asitav Sen](https://asitavsen.com)
